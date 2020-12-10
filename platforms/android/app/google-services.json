@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "509510089707",
+    "firebase_url": "https://amoreblinddating.firebaseio.com",
+    "project_id": "amoreblinddating",
+    "storage_bucket": "amoreblinddating.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509510089707:android:a6fb36a166bd47e8",
+        "android_client_info": {
+          "package_name": "com.elvento.amoredating"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509510089707-u5cesha8msov1mcgsmou02eo24jn01dl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elvento.amoredating",
+            "certificate_hash": "a9a8f3c1dc2a01a768caa4ca03a02330485e3473"
+          }
+        },
+        {
+          "client_id": "509510089707-a8ss0nibuoatposb9gfcccrfeeuj0kkk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elvento.amoredating",
+            "certificate_hash": "a16fbedb7b1a0cbc2bff41a0683bb7e4639813eb"
+          }
+        },
+        {
+          "client_id": "509510089707-pqfav0tlf2tlk1vs055e4dpm9dmumasp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZIPrMWAvSW3QbHtcPesQEzmipRT_Ttmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509510089707-pqfav0tlf2tlk1vs055e4dpm9dmumasp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509510089707:android:925efdc66e922f43f637ae",
+        "android_client_info": {
+          "package_name": "com.malecon.findmatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509510089707-pqfav0tlf2tlk1vs055e4dpm9dmumasp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZIPrMWAvSW3QbHtcPesQEzmipRT_Ttmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509510089707-pqfav0tlf2tlk1vs055e4dpm9dmumasp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

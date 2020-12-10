@@ -1,0 +1,380 @@
+ion-slides {
+    height: 100%;
+}
+
+.locationBox {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 9999;
+    font-weight: 400;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    padding: 40px 0px 40px 20px;
+    font-size: 20px;
+}
+
+.detailsBox {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    height: 50px;
+    z-index: 9999;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px #969696;
+    padding: 20px 20px;
+    font-size: 25px;
+}
+
+.userDistance {
+    font-size: 15px;
+    font-weight: 300;
+    clear: both;
+}
+
+.userAge {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.transFab {
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.card {
+    // padding: 15px 10px;
+}
+
+.card img {
+    object-fit: cover !important;
+    // width: 90%;
+    height: 100%;
+    width: 100%;
+    // margin: 10px;
+    // border-radius: 10px;
+    // box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    // padding: 2px;
+    // background-color: #fff;
+}
+
+ion-content {
+    // --ion-background-color: var(--ion-color-mazarine);
+}
+
+.opacityvisible {
+    opacity: 0.8;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.opacity {
+    opacity: 0.2;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+ion-back-button {
+    --color: #ffffff;
+}
+
+
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
+
+ion-content {
+    // --ion-background-color: #fdc324;
+}
+
+ion-header {
+    --ion-background-color: #fdc324;
+}
+
+
+.slides-ios {
+    --bullet-background: #000;
+    --bullet-background-active: #000000;
+    --progress-bar-background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    --progress-bar-background-active: var(--ion-color-primary-shade, #3171e0);
+    --scroll-bar-background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    --scroll-bar-background-active: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+}
+
+.details {
+    // height: 100px;
+    // width: 100%;
+    // background: linear-gradient(to top, #ffffff, transparent);
+    // position: absolute;
+    // bottom: 56px;
+    // z-index: 9999999;
+}
+
+img {
+    height: 100%;
+    object-fit: cover;
+}
+
+audio,
+canvas,
+progress,
+video {
+    vertical-align: baseline;
+    object-fit: cover;
+}
+
+.activityBox {
+    // background: #8bc34a63;
+    height: calc(100%);
+    z-index: 9999999999;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    left: 0px;
+}
+
+.likeUser {
+    // background: #8bc34a63;
+    // height: calc(100% - 50px);
+    // z-index: 9999999999;
+    // position: absolute;
+    // top: 25px;
+    // right: 25px;
+    // border-radius: 5px;
+    // left: 25px;
+    // transition: height 0.4s linear;
+
+    z-index: 999999;
+    // position: absolute;
+    // top: calc(50%);
+    // right: calc(50%);
+    border-radius: 50%;
+    // left: calc(50%);
+    transform: scale(500, 500);
+    transition: transform 2s ease-in-out;
+
+
+}
+
+.sendhiUser {
+    background: #2196f380;
+    height: 10px;
+    width: 10px;
+    z-index: 9999999999;
+    position: absolute;
+    top: calc(50%);
+    right: calc(50%);
+    border-radius: 50%;
+    left: calc(50%);
+    // transform: scale(1000, 1000);
+    // transition: transform 2s ease-in-out;
+
+
+}
+
+.dislikeUser {
+    // height: 10px;
+    // width: 10px;
+    position: absolute;
+    z-index: 99999;
+    // height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    // position: absolute;
+    // top: calc(50%);
+    // right: calc(50%);
+    // border-radius: 50%;
+    // left: calc(50%);
+    // transform: scale(400, 400);
+    transform: scale(2, 2);
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.starPoints {
+    padding: 10px;
+    color: white;
+    margin-top: -10px;
+    // font-size: 20px;
+    float: right;
+}
+
+.starPoints ion-chip {
+    background: #ffffffad;
+}
+
+.notDislikeUser {
+    position: absolute;
+    z-index: 99999;
+    width: 100%;
+    opacity: 0;
+    // transition: opacity 0.2s ease-in-out;
+}
+
+.null {
+    // background: transparent;
+    // height: 1px;
+    // width: 1px;
+    // z-index: 9999999999;
+    // position: absolute;
+    // width: 10px;
+    // top: calc(50%);
+    // right: calc(50%);
+    // border-radius: 5px;
+    // left: calc(50%);
+    // transition: height 0.1s linear;
+}
+
+.image-parallax {
+    position: absolute;
+
+    img {
+        margin-left: 200px;
+        width: 2000px;
+        height: auto;
+    }
+}
+
+.likeUserIcon {
+    background: transparent;
+    z-index: 9999999999;
+    position: absolute;
+    width: 10px;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    font-size: 50px;
+    color: #00808082;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+
+.sendhiUserIcon {
+    background: transparent;
+    z-index: 9999999999;
+    position: absolute;
+    width: 100px;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    font-size: 50px;
+    color: #2196f3;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+
+.dislikeUserIcon {
+    background: transparent;
+    z-index: 9999999999;
+    position: absolute;
+    width: 10px;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    font-size: 50px;
+    color: #ff0000a1;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.nullIcon {
+    background: transparent;
+    z-index: 9999999999;
+    position: absolute;
+    width: 10px;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    font-size: 50px;
+    opacity: 0;
+}
+
+
+.blurBack {
+    position: absolute;
+    filter: blur(10px);
+    width: 100%;
+    z-index: 2;
+    -webkit-filter: blur(10px);
+    /* Safari 6.0 - 9.0 */
+}
+
+
+.circle {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    border: 1px solid rgba(238, 42, 0, 0.7);
+    transform: translate(-50%, -50%);
+    background: rgba(238, 42, 0, 0.3);
+    animation: ripple 2s ease infinite;
+}
+
+.container {
+    // width: 300px;
+    width: 100%;
+    // height: 100%;
+    margin: 0 auto;
+    margin-top: calc(100% - 200px);
+    display: block;
+    position: fixed;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.container img {
+    // height: 100%;
+    // width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.containercircle {
+    // position: fixed;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    // width: 100%;
+    // margin-top: calc(100% - 200px);
+    display: block;
+    // position: relative;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.photo {
+    width: 10px;
+    height: 10px;
+    // background: url(../assets/imgs/icon.png);
+    background-size: cover;
+    animation: none;
+    border: none;
+    z-index: 100;
+}
+
+@keyframes ripple {
+    from {
+        opacity: 0.1;
+        width: 0.1%;
+        height: 0.1%;
+    }
+
+    to {
+        opacity: 0.6;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.my-custom-modal-css {
+    --background: transparent !important;
+    --ion-background-color: transparent !important;
+}

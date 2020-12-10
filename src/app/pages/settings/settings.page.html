@@ -1,0 +1,37 @@
+<ion-header no-border>
+    <ion-toolbar color="red" style="padding-top:20px !important;">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>My Settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div (click)="upgrade()" class="upgradeBox">
+        <img class="upgradeImage" src="assets/imgs/upgrade.jpg">
+        <div class="upgradeOverlay">
+            <div class="uStars">Get 10 Stars Everyday</div>
+            <div class="uButton">Upgrade to PRO</div>
+        </div>
+    </div>
+    <ion-list lines="none">
+        <ion-item (click)="promptForRating()" style="background: transparent;border: none;">Rate Us
+            <ion-icon name="ios-arrow-forward" slot="end" style="font-size: 20px;line-height: 28px;"></ion-icon>
+        </ion-item>
+        <ion-item (click)="shareApp()" style="background: transparent;border: none;">Share App
+            <ion-icon name="ios-arrow-forward" slot="end" style="font-size: 20px;line-height: 28px;"></ion-icon>
+        </ion-item>
+        <ion-item style="background: #ececec;">
+            <ion-label>Push Notifications</ion-label>
+            <ion-toggle [(ngModel)]="user.pushNotifications" (ngModelChange)="pushChange($event)" color="red"></ion-toggle>
+        </ion-item>
+        <ion-item (click)="openUrl('privacy')" style="background: transparent;border: none;">Privacy Policy
+            <ion-icon name="ios-arrow-forward" slot="end" style="font-size: 20px;line-height: 28px;"></ion-icon>
+        </ion-item>
+        <ion-item (click)="openUrl('terms')" style="background: transparent;border: none;">Terms of Service
+            <ion-icon name="ios-arrow-forward" slot="end" style="font-size: 20px;line-height: 28px;"></ion-icon>
+        </ion-item>
+        <ion-item (click)="logout()" style="background: transparent;padding-top:10px;border: none;color:red;">LOGOUT
+        </ion-item>
+    </ion-list>
+</ion-content>

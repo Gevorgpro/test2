@@ -1,0 +1,43 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cc.fovea.cordova.purchase": {
+      "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh0bgfNY8p+54VzdK6R4dHZmWZipSQV5c9Rat7VAYWqq1HXAqnR7d0+bzMWfFPO8T+RVqsoTHJdSUfGbGZv2WVSGoeragSjIWCj5j8gNc+WP0kR0q4W44MnRISuynl015kkHw7gOIND0mBqmZxdBJ/JwOQ6v9sBqjIU8IV7+lZ+CFOfvvHncVJu0E1QK65NjXUt3th/6v0ho/iLsfLOPLoxx29cvaPJMJn/CQOKsdKd7sPSKi3WuzwHKmW7S7ak/QyoLXyVDUe7Ki72KgdAZUjCrg9CgbXE9HqRvvHN1KgC5qkmT/Ke72Jx7vYsjVX0reYQP1zuSNV0cCFWY+OIwZswIDAQAB",
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-apprate": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "390999125256737",
+      "APP_NAME": "DatingApp",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2",
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    }
+  }
+}

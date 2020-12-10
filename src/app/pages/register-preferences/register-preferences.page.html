@@ -1,0 +1,96 @@
+<!-- <ion-header no-border>
+  <ion-navbar color="valencia">
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+</ion-header> -->
+<ion-content padding>
+    <!-- <divs #slides (ionSlideDidChange)="slideChange()" pager="false" [options]="slideOpts"> -->
+    <div *ngIf="currentIndex == 1">
+        <div class="form">
+            <h2 class="slide-title" style="margin-bottom: -1px;margin-top: 20px;">
+                Welcome!
+            </h2>
+            <p style="font-size: 15px;color: #646464;padding:0px;margin: 0px;margin-bottom: 20px;">
+                Lets get you started.
+            </p>
+            <ion-list lines="none">
+                <form [formGroup]="form">
+                    <ion-item lines="full">
+                        <ion-label position="stacked">Name</ion-label>
+                        <ion-input type="text" required formControlName="name"></ion-input>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label position="stacked">Gender</ion-label>
+                        <ion-select placeholder="Select One" formControlName="gender" required>
+                            <ion-select-option value="Female">Female</ion-select-option>
+                            <ion-select-option value="Male">Male</ion-select-option>
+                            <!-- <ion-select-option value="Both">Oth</ion-select-option> -->
+                        </ion-select>
+                    </ion-item>
+                    <ion-item lines="full">
+                        <ion-label position="stacked">Interested in</ion-label>
+                        <ion-select placeholder="Select One" formControlName="interested" required>
+                            <ion-select-option value="Female">Female</ion-select-option>
+                            <ion-select-option value="Male">Male</ion-select-option>
+                            <ion-select-option value="Both">Both</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item class="show" lines="full">
+                        <ion-label position="stacked">Date of Birth</ion-label>
+                        <ion-datetime displayFormat="DD MMM YYYY" required pickerFormat="DD MMM YYYY" formControlName="dob"></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="stacked" style="padding-bottom: 1px;">Age Range - {{form.value.age.lower}} to {{form.value.age.upper}}</ion-label>
+                        <ion-range formControlName="age" min="18" max="80" id="dual-range" dual-knobs color="dark">
+                        </ion-range>
+                    </ion-item>
+                </form>
+            </ion-list>
+        </div>
+    </div>
+    <div *ngIf="currentIndex == 2">
+        <div>
+            <div text-center>
+                <ion-button (click)="presentActionSheet()" class="addPhotoButton" [disabled]="photos.length == 6">
+                    <ion-icon name="md-add" slot="icon-only"></ion-icon>
+                </ion-button>
+            </div>
+            <div *ngIf="photos.length == 0" style="padding:10px 10px 20px 10px;text-align: center;font-family: 'Abel', sans-serif !important;">Upload you photos!</div>
+            <div *ngIf="photos.length != 0" style="padding:10px 10px 20px 10px;text-align: center;font-family: 'Abel', sans-serif !important;">Use drag & drop to sort the photos!</div>
+            <ion-row [sortablejs]="photos">
+                <ion-col *ngFor="let photo of photos; let i = index;" size="4">
+                    <img [src]="photo" [ngStyle]="{'display' : photosLoad[photo] ? 'block' : 'none'}" (load)="imageload(photo)">
+                    <img *ngIf="placeholder(photo)" src="assets/imgs/loading.gif">
+                    <div *ngIf="i > 0" class="imgRemove">
+                        <ion-icon (click)="removePhoto(i)" name="close"></ion-icon>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+    <div *ngIf="currentIndex == 3">
+        <div class="diag">
+            <img style="padding: 10% 0% 0% 0%;width: 100px;" src="assets/imgs/location.png">
+            <div style="padding-top: 30px;" text-center>
+                <h2>Use Your Location?</h2>
+                <p>We find other Members that are near you using your current location to facilitate virtual and/or real life dating. We never share your exact location with anyone.</p>
+            </div>
+        </div>
+    </div>
+    <!-- </divs> -->
+</ion-content>
+<ion-footer style="background: #fff;" no-border padding>
+    <ion-row>
+        <ion-col>
+            <ion-button *ngIf="currentIndex > 1" expand="block" fill="outline" (click)="back()" color="danger">Back</ion-button>
+        </ion-col>
+        <ion-col>
+            <ion-button [disabled]="form.invalid" expand="block" fill="outline" *ngIf="currentIndex < 3" round [disabled]="(index == 1 && photos.length == 0)" (click)="next()" outline block color="teal">
+                Next
+            </ion-button>
+            <ion-button expand="block" fill="outline" *ngIf="currentIndex == 3" round (click)="submit()" outline block color="teal">
+                Continue
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

@@ -1,0 +1,79 @@
+<ion-content>
+    <div (click)="openProfile()" class="top">
+        <img [src]="pic">
+    </div>
+    <div class="details" text-capitalize>
+        <ion-item lines="none">
+            <ion-label>
+                <h2>{{user.name}}, <span style="font-size:14px;text-transform: capitalize;">{{calculateAge(user.dob)}} {{user.gender}} </span></h2>
+                <h3>{{user.city}}, {{user.country}}</h3>
+            </ion-label>
+            <ion-avatar slot="end">
+                <!-- <ion-icon class="editClass" name="create" color="light"></ion-icon> -->
+                <ion-icon class="editClass" name="ios-create" color="light"></ion-icon>
+            </ion-avatar>
+        </ion-item>
+        <!--       {{user.name}}, <span style="font-size:14px;text-transform: capitalize;">{{calculateAge(user.dob)}} {{user.gender}} </span>
+        <div (click)="openPhotos()" style="float: right;padding:7px;">
+            <ion-icon name="ios-create-outline" color="white"></ion-icon>
+        </div>
+        <div style="font-size: 14px;">{{user.city}}</div> -->
+    </div>
+    <div (click)="upgrade()" class="pointsBox">
+        <div class="starPoints"> My Star Points</div>
+        <ion-chip class="points">
+            <ion-icon name="star" color="light"></ion-icon>
+            <ion-label style="font-weight: bold;font-size: 16px;padding: 0 5px 0 0;color:white;">{{user.starPoints}}</ion-label>
+        </ion-chip>
+        <!-- <ion-icon class="iconClass" name="star" item-start></ion-icon> -->
+    </div>
+    <ion-list>
+        <!--       <ion-item (click)="openProfile()">
+        <ion-avatar item-start>
+          <ion-icon class="iconClass" name="contact" style="background: #fdcb6e" item-start></ion-icon>
+        </ion-avatar>
+        <h2>My Profile</h2>
+        <h3>Change your profile details</h3>
+      </ion-item> -->
+        <ion-item (click)="openPreferences()">
+            <ion-avatar slot="start">
+                <ion-icon class="iconClass" name="people"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+                <h2>My Preferences</h2>
+                <h3>Choose which users you want to see</h3>
+            </ion-label>
+        </ion-item>
+        <ion-item (click)="openSettings()" lines="none">
+            <ion-avatar slot="start">
+                <ion-icon class="iconClass" name="settings"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+                <h2>Settings</h2>
+                <h3>Manage app settings.</h3>
+            </ion-label>
+        </ion-item>
+        <!--       <ion-item (click)="openPreferences()">
+        <ion-avatar item-start>
+          <ion-icon class="iconClass" name="people" style="background: #00b894" slot="start"></ion-icon>
+        </ion-avatar>
+        <h2>My Preferences</h2>
+        <h3>Choose which users you want to see</h3>
+      </ion-item>
+
+      <ion-item (click)="openSettings()">
+        <ion-avatar item-start>
+          <ion-icon class="iconClass" name="settings" style="background: #b2bec3" item-start></ion-icon>
+        </ion-avatar>
+        <h2>Settings</h2>
+        <h3>Manage app settings.</h3>
+      </ion-item> -->
+        <!--       <ion-item>
+        <ion-avatar item-start>
+          <ion-icon class="iconClass" name="help" style="background: #e17055;font-size: 24px;font-weight: bold" item-start></ion-icon>
+        </ion-avatar>
+        <h2>Help?</h2>
+        <h3>FAQ's and contact</h3>
+      </ion-item> -->
+    </ion-list>
+</ion-content>

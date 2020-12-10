@@ -1,0 +1,38 @@
+<ion-content>
+<div class='modalShown'>
+
+	<ion-item lines="none" class="pointsBox">
+      <ion-icon (click)="close()" name="md-close" color="light" slot="start"></ion-icon>
+    <div class="starPoints"> Break The Ice!</div>
+    <ion-chip slot="end">
+      <ion-icon name="star" color="white"></ion-icon>
+      <ion-label>{{user.starPoints}}</ion-label>
+    </ion-chip>
+	</ion-item>
+<!--   <div class="pointsBox">
+    <div (click)="close()" class="iceClose">
+      <ion-icon name="md-close" color="light"></ion-icon>
+    </div>
+    <div class="starPoints"> Break The Ice!</div>
+    <ion-chip class="images">
+      <ion-icon name="star" color="white"></ion-icon>
+      <ion-label>{{user.starPoints}}</ion-label>
+    </ion-chip>
+  </div> -->
+  <div style="background: #fff;border-bottom: 1px solid #ccc;">
+    <ion-row>
+      <ion-col col col-8>
+        <div style="line-height: 35px;text-align: left;padding-left: 10px;">
+          {{editorMsg.length}}/250 characters
+        </div>
+      </ion-col>
+      <ion-col col col-4>
+        <button (click)="send()" [disabled]="editorMsg.length == 0" class="sendButton">Send</button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div style="margin-top: 10px;text-align: center;">
+    <ion-textarea #myInput rows="10" maxLength="250" placeholder="Write something nice.." [(ngModel)]="editorMsg" (ngModelChange)="textChange()" style="color: #797b7e;text-align: left !important;padding: 10px;"></ion-textarea>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,104 @@
+.iconClass {
+    background: #222222;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+}
+
+.editClass {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+}
+
+.details ion-item {
+    --ion-background-color: transparent;
+    color: white;
+}
+
+.details ion-item h2 {
+    color: white;
+    font-size: 20px;
+}
+
+.details ion-item h3 {
+    color: white;
+}
+
+.pointsBox {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px 20px 0;
+    background: var(--ion-color-red);
+    margin-bottom: 20px;
+    height: 115px;
+    // border-bottom: 1px solid #ccc;
+}
+
+.starPoints {
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.images {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.item-ios,
+.item-ios {
+    border-bottom: none !important;
+}
+
+.top {
+    height: calc(100% - 115px);
+    // position: sticky;
+    top: 0;
+    // z-index: -1;
+}
+
+h1 {}
+
+h2 {
+    font-family: 'Abel', sans-serif !important;
+}
+
+h3 {
+    color: #6a6a6a;
+    font-family: 'Abel', sans-serif !important;
+}
+
+.details {
+    font-family: 'Abel', sans-serif;
+    position: absolute;
+    z-index: 99;
+    top: calc(100% - 204px);
+    font-size: 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    color: white;
+    padding: 19px 10px 8px 10px;
+}
+
+.item-ios ion-avatar[item-start],
+.item-ios ion-thumbnail[item-start] {
+    margin: 8px 0px 8px 0 !important;
+}
+
+.my-custom-modal-css {
+    --background: transparent !important;
+    --ion-background-color: transparent !important;
+}

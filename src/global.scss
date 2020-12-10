@@ -1,0 +1,91 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.ion-color-mazarine {
+    --ion-color-base: var(--ion-color-mazarine) !important;
+    --ion-color-base-rgb: var(--ion-color-mazarine-rgb) !important;
+    --ion-color-contrast: var(--ion-color-mazarine-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-mazarine-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-mazarine-shade) !important;
+    --ion-color-tint: var(--ion-color-mazarine-tint) !important;
+}
+
+.ion-color-trans {
+    --ion-color-base: var(--ion-color-trans) !important;
+    --ion-color-base-rgb: var(--ion-color-trans-rgb) !important;
+    --ion-color-contrast: var(--ion-color-trans-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-trans-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-trans-shade) !important;
+    --ion-color-tint: var(--ion-color-trans-tint) !important;
+}
+
+
+.ion-color-black {
+    --ion-color-base: var(--ion-color-black) !important;
+    --ion-color-base-rgb: var(--ion-color-black-rgb) !important;
+    --ion-color-contrast: var(--ion-color-black-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-black-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-black-shade) !important;
+    --ion-color-tint: var(--ion-color-black-tint) !important;
+}
+
+.ion-color-teal {
+    --ion-color-base: var(--ion-color-teal) !important;
+    --ion-color-base-rgb: var(--ion-color-teal-rgb) !important;
+    --ion-color-contrast: var(--ion-color-teal-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-teal-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-teal-shade) !important;
+    --ion-color-tint: var(--ion-color-teal-tint) !important;
+}
+
+.ion-color-red {
+    --ion-color-base: var(--ion-color-red) !important;
+    --ion-color-base-rgb: var(--ion-color-red-rgb) !important;
+    --ion-color-contrast: var(--ion-color-red-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-red-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-red-shade) !important;
+    --ion-color-tint: var(--ion-color-red-tint) !important;
+}
+
+.imageSlider .swiper-pagination {
+    // top: 4px !important;
+    // bottom: 55px !important;
+    // width: 100%;
+}
+
+.imageSlider .swiper-pagination-bullet {
+    // width: 5%;
+    // border-radius: 0;
+    // height: 3px;
+    // margin: 5px !important;
+}
+
+
+
+.modal-wrapper.sc-ion-modal-ios {
+    background: transparent !important;
+}

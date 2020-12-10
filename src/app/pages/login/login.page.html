@@ -1,0 +1,50 @@
+<ion-header mode="ios" no-border>
+</ion-header>
+<ion-content>
+<!--     <div class="textTitle">
+        {{welcomeText[currentIndex].subtitle}}
+    </div> -->
+    <div class="logo">
+<img src="assets/imgs/fmlogo.png">
+<div class="textTitle">
+        {{welcomeText[currentIndex].subtitle}}
+</div>
+    </div>
+    <ion-slides #slider class="imageSlider" mode="ios" pager="true" color="dark" (ionSlideDidChange)="slideChange()">
+        <ion-slide *ngFor="let slide of slides">
+            <div class="slide">
+                <img style="width:100%" [src]="slide.imagePath" />
+            </div>
+        </ion-slide>
+    </ion-slides>
+    <div class="welcomeText">
+        <!-- {{welcomeText[currentIndex]}} -->
+        <!-- <div *ngFor="let text of welcomeText"> -->
+        <!-- <span>{{welcomeText[currentIndex].subtitle}}</span> -->
+        <!-- </div> -->
+    </div>
+</ion-content>
+<ion-footer no-border class="cFooter">
+    <!-- <ion-toolbar style="background: transparent !important;"> -->
+        <div style="text-align: center;color:#fff">
+            By registering, you agree to our <b>Terms of Service</b> and <b>Privacy Policy</b>.
+        </div>
+        <div class="facebook" (click)="continue()">
+            Connect with Facebook
+        </div>
+        <div class="phone" (click)="phoneAuth()">
+            Use my phone number
+        </div>
+        <div style="text-align: center;font-size: 14px;color:#cccccc;font-weight: 300;">
+            We will never publish anything on Facebook.
+        </div>
+    <!-- </ion-toolbar> -->
+    <!--     <ion-toolbar>
+        <div *ngIf="!slideEnd">
+            <ion-button (click)="next()" fill="clear" color="primary" type="submit" expand="block">Next</ion-button>
+        </div>
+        <div *ngIf="slideEnd">
+            <ion-button (click)="continue()" fill="clear" color="primary" type="submit" expand="block">Login with Facebook</ion-button>
+        </div>
+    </ion-toolbar> -->
+</ion-footer>

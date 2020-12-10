@@ -1,0 +1,19 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" [ngClass]="getTabsClass()">
+
+    <ion-tab-button tab="messages" (click)="tabSelect(1)">
+      <ion-icon name="chatboxes"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="home" (click)="tabSelect(2)">
+      <ion-icon name="heart"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="account" (click)="tabSelect(3)">
+      <ion-icon name="contact"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
+

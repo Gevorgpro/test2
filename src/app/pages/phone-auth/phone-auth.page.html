@@ -1,0 +1,63 @@
+<ion-header no-border>
+    <ion-toolbar style="padding-top:20px !important;">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div *ngIf="!codeSent" style="padding:30px 20px 0px 20px;text-align: center;">
+        What's your phone number?
+    </div>
+    <div *ngIf="codeSent" style="padding:30px 20px 0px 20px;text-align: center;">
+        Did you get your code? Enter it below!
+    </div>
+    <ion-grid *ngIf="!codeSent">
+        <ion-row>
+            <ion-col size="3">
+                <ion-item class="code">
+                    <ion-input disabled [(ngModel)]="callingCode" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="9">
+                <ion-item class="phone">
+                    <ion-input [(ngModel)]="phoneNumber" type="number"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="codeSent">
+        <ion-row>
+            <ion-col size="3">
+            </ion-col>
+            <ion-col size="6">
+                <ion-item class="smsCode">
+                    <ion-input [(ngModel)]="smsCode" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="3">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div *ngIf="!codeSent" style="padding:15px 30px;text-align: center;font-size: 12px;color:#9c9c9c">
+        We need it to verify your account, and exclusively for that reason. It will never be shown on your profile.
+    </div>
+    <div style="padding:10px 30px;text-align: center;font-size: 13px;color:#ff7171">
+    	{{errorMessage}}
+    </div>
+    <div id="recaptcha-container"></div>
+</ion-content>
+<ion-footer *ngIf="phoneNumber > 0">
+    <ion-toolbar>
+        <div *ngIf="!codeSent && !waitingResponse" class="facebook" (click)="continue()">
+            Continue
+        </div>
+        <div *ngIf="waitingResponse" style="text-align: center;padding: 10px;">
+   		    <ion-spinner></ion-spinner>
+        </div>
+        <div *ngIf="codeSent && !waitingResponse" class="facebook" (click)="verify()">
+            Continue
+        </div>
+    </ion-toolbar>
+</ion-footer>

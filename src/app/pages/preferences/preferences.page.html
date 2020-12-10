@@ -1,0 +1,57 @@
+<ion-header no-border>
+    <ion-toolbar color="red" style="padding-top:20px !important;">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>My Preferences</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="update()">
+                <ion-icon slot="icon-only" color="light" name="checkbox"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div (click)="upgrade()" class="upgradeBox">
+        <img class="upgradeImage" src="assets/imgs/upgrade.jpg">
+        <div class="upgradeOverlay">
+            <div class="uStars">Get 10 Stars Everyday</div>
+            <div class="uButton">Upgrade to PRO</div>
+        </div>
+    </div>
+    <ion-list mode="ios" lines="none">
+        <form [formGroup]="form">
+        <ion-item mode="ios">
+            <ion-label position="stacked">Interested in</ion-label>
+            <ion-select placeholder="Select One" formControlName="interested">
+                <ion-select-option value="Female">Female</ion-select-option>
+                <ion-select-option value="Male">Male</ion-select-option>
+                <ion-select-option value="Both">Both</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item class="show">
+            <ion-label>Show me on Find Match</ion-label>
+            <ion-toggle formControlName="show"></ion-toggle>
+        </ion-item>
+        <ion-item mode="ios">
+            <ion-label position="stacked" style="padding-bottom: 1px;">Age Range - {{form.value.age.lower}} to {{form.value.age.upper}}</ion-label>
+            <ion-range formControlName="age" min="18" max="80" id="dual-range" dual-knobs color="dark">
+            </ion-range>
+        </ion-item>
+    </form>
+        <!--         <ion-item mode="ios" style="background: #ececec;padding: 5px 17px;">
+          <ion-label>Show me on Amore</ion-label>
+          <ion-toggle mode="ios" formControlName="show" color="red"></ion-toggle>
+        </ion-item>
+        <ion-item mode="ios">
+          <ion-label stacked>Maximum Distance - {{form.get('distance').value}} km.</ion-label>
+          <ion-range mode="ios" min="5" max="200" step="10" color="red">
+          </ion-range>
+        </ion-item>
+        <ion-item mode="ios">
+          <ion-label stacked>Age Range - {{form.get('age').value.lower}} to {{form.get('age').value.upper}}</ion-label>
+          <ion-range mode="ios" dualKnobs="true" min="18" max="72" step="1" color="red">
+          </ion-range>
+        </ion-item> -->
+    </ion-list>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-content fullscreen>
+    <div class="container" *ngIf="nearbyUsers.length == 0">
+        <img src="assets/imgs/ripple.gif">
+<!--         <div class="containercircle">
+        <a class="circle photo" target="_blank"></a>
+        <div class="circle"></div>
+        </div> -->
+    </div>
+    <div *ngIf="nearbyUsers.length > 0" class="locationBox">
+        <div style="float: left;">
+        <div>
+            {{currentUser.city}}, {{currentUser.country}}
+            <!-- {{currentUser.name}} -->
+        </div>
+        <div class="userDistance">
+            {{getDistance(currentUser.loc.coordinates)}} away
+            <!-- {{calculateAge(currentUser.dob)}} -->
+        </div>
+        </div>
+        <div class="starPoints">
+            <ion-chip>
+                <ion-icon name="star" color="dark"></ion-icon>
+                <ion-label style="font-weight: bold;font-size: 16px;padding: 0 5px 0 0;color:#222222;">
+                    {{user.starPoints}}
+                </ion-label>
+            </ion-chip>
+        </div>
+    </div>
+    <div *ngIf="nearbyUsers.length > 0" class="detailsBox">
+        <div>
+            {{currentUser.name}}, <span class="userAge">{{calculateAge(currentUser.dob)}} </span>
+        </div>
+    </div>
+<!--     <ion-fab *ngIf="nearbyUsers.length > 0" style="bottom:75px;margin-left:15px;opacity: 0.5;" [ngClass]="getLikedClass()" vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button [disabled]="disliked" class="transFab" color="teal" translucent="true">
+        </ion-fab-button>
+    </ion-fab> -->
+    <ion-fab *ngIf="nearbyUsers.length > 0" style="bottom:75px;margin-left:7px;" [ngClass]="getClass()" vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button [disabled]="disliked" (click)="like()" class="transFab" color="teal" translucent="true">
+            <ion-icon name="mail"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+<!--     <ion-fab *ngIf="nearbyUsers.length > 0" style="bottom:75px;margin-left: -65px;opacity: 0.5;" vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button [disabled]="disliked" class="transFab" color="danger" translucent="true">
+        </ion-fab-button>
+    </ion-fab> -->
+    <ion-fab *ngIf="nearbyUsers.length > 0" style="bottom:75px;margin-left: -65px;" [ngClass]="getClass()" vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button [disabled]="disliked" (click)="cross()" class="transFab" color="danger" translucent="true">
+            <ion-icon style="font-size: 50px;" name="close"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+<!-- navigation buttons -->
+
+    <ion-fab *ngIf="nearbyUsers.length > 0" style="bottom:75px;" vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button size="small" [disabled]="disliked || isBeginning" (click)="previous()" class="transFab" color="light" translucent="true">
+            <ion-icon name="arrow-back"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ion-fab *ngIf="nearbyUsers.length > 0" style="bottom:75px;" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" [disabled]="disliked || isEnd" (click)="next()" class="transFab" color="light" translucent="true">
+            <ion-icon name="arrow-forward"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <ion-slides #slider mode="ios" [options]="slideOpts" class="parallax-bg" (ionSlideTouchStart)="dragging($event)" (ionSlideDidChange)="slideChange()" (ionSlideTransitionEnd)="ionSlideTransitionEnd()">
+        <ion-slide class="card" *ngFor="let user of nearbyUsers" (click)="openUser(user)">
+            <!-- <div class="card"> -->
+            <!-- <img [src]="user.image"> -->
+            <ion-slides class="imageSlider" [options]="slideOpts2" mode="ios" pager="true">
+                <ion-slide data-swiper-parallax="-200" class="card" *ngFor="let img of user.photos">
+                    <img [src]="img">
+                    <div [ngClass]="getDisLikedClass()">
+                        <ion-icon style="font-size: 300px;" name="close" color="danger"></ion-icon>
+                    </div>
+                </ion-slide>
+            </ion-slides>
+            <!-- </div> -->
+        </ion-slide>
+    </ion-slides>
+</ion-content>

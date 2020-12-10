@@ -1,0 +1,107 @@
+<ion-header no-border>
+    <ion-toolbar color="red" style="padding-top:20px !important;">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>My Profile</ion-title>
+        <ion-buttons slot="end">
+            <ion-button [disabled]="!form.value.name" (click)="update()">
+                <ion-icon slot="icon-only" color="light" name="checkbox"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar color="red" style="padding:10px !important;">
+        <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="person">
+                Profile
+            </ion-segment-button>
+            <ion-segment-button value="photos">
+                Photos
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <div [ngSwitch]="segment">
+        <div *ngSwitchCase="'person'">
+            <form [formGroup]="form">
+                <ion-list mode="ios">
+                    <form [formGroup]="form">
+                        <ion-item lines="full">
+                            <ion-label position="stacked">Name</ion-label>
+                            <ion-input type="text" required formControlName="name"></ion-input>
+                        </ion-item>
+                        <ion-item mode="ios">
+                            <ion-label position="stacked">Gender</ion-label>
+                            <ion-select placeholder="Select One" formControlName="gender">
+                                <ion-select-option value="Female">Female</ion-select-option>
+                                <ion-select-option value="Male">Male</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="stacked">Date of Birth</ion-label>
+                            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMM YYYY" formControlName="dob"></ion-datetime>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="stacked">Work</ion-label>
+                            <ion-input formControlName="work"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="stacked">Education</ion-label>
+                            <ion-input formControlName="education"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="stacked">About me</ion-label>
+                            <ion-textarea #myInput id="myInput" rows="4" placeholder="Something about yourself" formControlName="about"></ion-textarea>
+                        </ion-item>
+                        <!--               <ion-item class="show">
+            <ion-label>Show me on Amore</ion-label>
+            <ion-toggle formControlName="show"></ion-toggle>
+        </ion-item>
+        <ion-item mode="ios">
+            <ion-label position="stacked" style="padding-bottom: 1px;">Age Range - {{form.value.age.lower}} to {{form.value.age.upper}}</ion-label>
+            <ion-range formControlName="age" min="18" max="80" id="dual-range" dual-knobs color="dark">
+            </ion-range>
+        </ion-item> -->
+                    </form>
+                </ion-list>
+                <!--         <ion-list style="background: transparent;">
+
+          <ion-item no-padding>
+            <ion-label stacked>Date of Birth</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMM YYYY" formControlName="dob"></ion-datetime>
+          </ion-item>
+          <ion-item no-padding [class.invalid]="form.get('work').invalid">
+            <ion-label stacked>Work</ion-label>
+            <ion-input #input formControlName="work" autocomplete="off" type="text" required></ion-input>
+          </ion-item>
+          <ion-item no-padding [class.invalid]="form.get('education').invalid">
+            <ion-label stacked>Education</ion-label>
+            <ion-input #input formControlName="education" autocomplete="off" type="text" required></ion-input>
+         </ion-item>
+          <ion-item no-padding [class.invalid]="form.get('about').invalid">
+            <ion-label stacked>About me</ion-label>
+            <ion-textarea #myInput id="myInput" rows="3" placeholder="Something about yourself" formControlName="about"></ion-textarea>
+          </ion-item>
+        </ion-list> -->
+            </form>
+        </div>
+        <div *ngSwitchCase="'photos'">
+            <div mode="ios" class="ion-text-center">
+                <button mode="ios" (click)="presentActionSheet()" ion-button icon-only clear [disabled]="photos.length == 6">
+                    <ion-icon name="md-add" mode="ios" class="addButton" item-start></ion-icon>
+                </button>
+            </div>
+            <div style="padding:10px 10px 20px 10px;text-align: center;font-family: 'Abel', sans-serif !important;">Use Drag & Drop to sort the Photos!</div>
+            <ion-row [sortablejs]="photos">
+                <ion-col *ngFor="let photo of photos; let i = index;" size="4">
+                    <img [src]="photo" [ngStyle]="{'display' : photosLoad[photo] ? 'block' : 'none'}" (load)="imageload(photo)">
+                    <img *ngIf="placeholder(photo)" src="assets/imgs/loading.gif">
+                    <div *ngIf="i > 0" class="imgRemove">
+                    <ion-icon (click)="removePhoto(i)" name="close"></ion-icon>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+</ion-content>

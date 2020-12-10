@@ -1,0 +1,43 @@
+button {
+    background: white;
+}
+
+img {
+    object-fit: cover !important;
+    height: 150px !important;
+    width: 100%;
+}
+
+.imgAdd {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 15px);
+    height: 40px;
+    text-align: center;
+    width: 30px;
+    font-size: 40px;
+}
+
+.imgRemove {
+    position: absolute;
+    top: 5px;
+    padding-top: 3px;
+    right: 5px;
+    height: 32px;
+    text-align: center;
+    width: 32px;
+    background: #fb0000b8;
+    font-size: 26px;
+    color: white;
+}
+
+.addButton {
+    background: #0984e3;
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-weight: 200;
+}

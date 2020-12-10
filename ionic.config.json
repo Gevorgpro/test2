@@ -1,0 +1,7 @@
+{
+  "name": "amoredating",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

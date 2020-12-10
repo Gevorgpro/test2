@@ -1,0 +1,47 @@
+<ion-header no-border>
+  <ion-toolbar color="red" style="padding-top:20px !important;">
+    <ion-title>Messages</ion-title>
+  </ion-toolbar>
+    <ion-toolbar mode="ios" color="red">
+        <ion-searchbar (ionInput)="getItems($event)" mode="ios" showCancelButton="focus"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <div class="diag" *ngIf="messagesDB.length == 0">
+        <img style="padding: 30% 40% 0 40%;color: var(--ion-color-red);" src="assets/imgs/speech-bubble.svg">
+        <p style="color:var(--ion-color-red)">You have no messages!</p>
+      </div>
+      <ion-list mode="ios">
+
+        <ion-item (click)="openChat(message)" *ngFor="let message of messagesDB" class="messageBox" [ngClass]="getBorder(message)">
+          <ion-avatar slot="start">
+            <img [src]="message.image">
+          </ion-avatar>
+          <ion-label>
+            <h2>{{message.name}}</h2>
+            <p>{{message.lastMessage}}</p>
+          </ion-label>
+          <ion-note slot="end">
+          		{{timeDifference(message.createdAt.toDate())}} ago
+          </ion-note>
+        </ion-item>
+
+<!--         <ion-item mode="ios" *ngFor="let message of messagesDB" (click)="openChat(message)" class='message' [ngStyle]="{'background-color':message.read == true ? '#ffffff' : '#f1f1f1' }">
+          <ion-thumbnail mode="ios" item-start>
+            <img [src]="message.image">
+    </ion-thumbnail>
+            <div>
+              <div style="float: left;color:teal;font-size: 18px;line-height: 20px;" text-capitalize>
+                {{message.name}}
+              </div>
+              <div style="float: right;color:#ccc;font-size: 14px;line-height: 20px;">
+                {{timeDifference(message.createdAt.toDate())}} ago
+              </div>
+            </div>
+            <div style="clear: both;color:#222; font-size: 16px;width: 100%;overflow: hidden;text-overflow: ellipsis;height: 25px;white-space: nowrap;">
+              {{message.lastMessage}}
+            </div>
+        </ion-item> -->
+      </ion-list>
+</ion-content>

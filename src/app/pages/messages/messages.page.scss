@@ -1,0 +1,95 @@
+  .diag {
+    position: absolute;
+    z-index: 1;
+    // width: calc(100% - 34px);
+    top: 0;
+    height: 76%;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 0px !important;
+  }
+
+  p {
+    white-space: normal;
+  }
+
+  .noBorder
+  {
+    border-left: 3px solid white;
+  }
+  .border
+  {
+    border-left: 3px solid gray;
+  }
+
+
+  .messageBox {
+    padding: 5px;
+  }
+
+  .messageBox h2 {
+    color:teal
+  }
+
+  .messageBox ion-note {
+    font-size: 13px;
+  }
+
+  .card-content-md,
+  .card-content-ios {
+    padding: 0px !important;
+    background-color: #525b56;
+  }
+
+  .message {
+    color: #f8f8f8 !important;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  .ptext {
+    font-size: 17px;
+    line-height: 20px;
+    /* Height / no. of lines to display */
+    overflow: hidden;
+    padding: 0px 20px;
+
+    img {
+      height: 200px !important;
+      object-fit: cover;
+      border-radius: 3px;
+      width: 100%;
+      margin-top: 10px;
+      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+    }
+
+  }
+
+  .label-md,
+  .label-ios {
+    margin-bottom: 0px;
+  }
+
+  ion-card {
+    box-shadow: none;
+  }
+
+  .postLiked {
+    color: #2574a9;
+  }
+
+  .postNotLiked {
+    color: #cccccc;
+  }
+
+  img {
+    object-fit: cover;
+    border-radius: 3px !important;
+  }
+
+  .feed {
+    border-bottom: 0px solid #ccc;
+  }
+

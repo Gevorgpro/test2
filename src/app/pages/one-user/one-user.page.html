@@ -1,0 +1,37 @@
+
+<ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)">
+<div class="backdrop"></div>
+    <ion-fab style="top:40px !important;" vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button size="small" class="transFab" (click)="back()" routerDirection="backward" color="transparent">
+            <ion-icon name="arrow-round-back" color="light"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+<!--     <ion-fab style="top:40px !important;" vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" class="transFab" (click)="back()" routerDirection="backward" color="transparent">
+            <ion-icon name="md-more" color="light"></ion-icon>
+        </ion-fab-button>
+    </ion-fab> -->
+
+        <ion-slides [pager]="true" style="height: 90%;position: fixed;" [options]="slideOpts2" [style.top.px]="-top*0.5">
+          <ion-slide *ngFor="let image of user.photos">
+            <img [src]="image">
+        </ion-slide>
+        </ion-slides>
+      <div *ngIf="user.photos.length > 0" class="name">
+        <div class="marker"></div>
+        <div>{{user.name}}</div>
+        <div class="userDetails">
+       <div>{{calculateAge(user.dob)}} {{user.gender}}, about {{getDistance(user.loc.coordinates)}} away</div>
+       <!-- <div>Now about {{getDistance(user.loc.coordinates)}} away</div> -->
+        </div>
+<!--         <div style="float: right;font-size: 14px;line-height: 35px;" text-lowercase>about {{functions.getDistance(user.point.geopoint)}} away</div> -->
+      <div class="moreInfo">
+        <div *ngIf="user.work" class="header">Work</div>
+        <div *ngIf="user.work" class="infodata">{{user.work}}</div>
+        <div *ngIf="user.education" class="header">Education</div>
+        <div *ngIf="user.education" class="infodata">{{user.education}}</div>
+        <div *ngIf="user.about" class="header">About</div>
+        <div *ngIf="user.about" class="infodata">{{user.about}}</div>
+      </div>
+      </div>
+</ion-content>

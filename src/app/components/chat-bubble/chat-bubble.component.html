@@ -1,0 +1,17 @@
+<!--       <div style="position: sticky;top:0;background: #ccc;height: 40px;width: 100%;text-align: center;line-height: 40px;z-index: 999999">
+        hello world
+    </div> -->
+    
+  <div class="chatBubble" >
+
+    <div class="chat-bubble {{getClass(message, user)}}">
+
+<!--       <div *ngIf="message.body.indexOf('.gif') < 0" class="message" >{{message.body}}</div>
+
+      <div *ngIf="message.body.indexOf('.gif') > -1" class="message"> <img (load)="scrollToBottom()" imageViewer  src="{{message.body}}"></div> -->
+
+    	  <div *ngIf="message.body.indexOf('.gif') < 0" class="message">{{message.body}}<div class="time">{{message.createdAt.toDate() | date: ' hh:mm a'}}</div> </div>
+
+    	  <div *ngIf="message.body.indexOf('.gif') > -1" class="message"> <img (load)="scrollToBottom()" imageViewer  src="{{message.body}}"><div class="time">{{message.createdAt.toDate() | date: ' hh:mm a'}}</div> </div>
+    </div>
+  </div>
